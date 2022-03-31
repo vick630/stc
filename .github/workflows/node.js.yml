@@ -1,6 +1,6 @@
 # This workflow will do a clean installation of node dependencies, cache/restore them, build the source code and run tests across different versions of node
 # For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
-
+npm install
 name: Node.js CI
 
 on:
@@ -29,16 +29,4 @@ jobs:
     - run: npm ci
     - run: npm run build --if-present
     - run: npm test
-
-stages:
-    - testing
-
-Testing:
-    stage: testing
-    image: node:latest
-    services:
-        - mongo:latest
-    before_script:
-        - npm install --no-optional
-    script:
-        - npm run test
+ň
